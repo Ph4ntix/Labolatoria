@@ -1,0 +1,75 @@
+\newpage
+
+{\section{Objętości i wyznaczenie gęstości}}
+
+Do wyznaczenia gęstości potrzeba tylko średnich arytmetycznych masy oraz objętości.
+Ze względu na złożoność obiektów należy uwzględnić w wyniku niepewność złożoną. \\
+\indent Masy nie będą uwzględnione w funkcjach gęstości, ponieważ została wyznaczona pojedynczym pomiarem.
+Przyjmiemy, że jest z góry wyznaczoną wartością i nie posiada ona błędu pomiarowego.\\
+
+{\indent \small Masa cylindra $m_c = 5.5g$} \\
+{\indent \small Masa wałka $m_w = 51.57g$} \\
+
+{\subsection{Cylinder}}
+
+Wzór na objętość cylindra w tym przypadku będzie wyglądał następująco:
+
+$$V_{c} = \left(\frac{d_{zew}}{2}\right)^2 \pi h - \left(\frac{d_{wew}}{2}\right)^2 \pi h = \pi h \left( \left(\frac{d_{zew}}{2}\right)^2 - \left(\frac{d_{wew}}{2}\right)^2 \right) = \pi h \left(\frac{d_{zew}^2 - d_{wew}^2}{4}\right)  \textrm{,}$$
+
+więc wzór na gęstość owego cylindra jako funkcja wielu zmiennych to:
+
+$$\displaystyle \rho_c(d_{zew}, d_{wew}) = \frac{m_c}{\pi h \left(\frac{d_{zew}^2 - d_{wew}^2}{4}\right)}$$
+
+Niepewność złożona składa się z pochodnych cząstkowych.
+Będą to pochodne funkcji wymiernej z funkcją kwadratową w mianowniku, oraz każda zmienna jest powiązana ze sobą jedynie sumą, dlatego dla ułatwienia zadania posłuży nam poniższy wzór.
+
+$$\frac{\partial}{\partial x}\frac{a}{bx^2 + c} = -\frac{2abx}{(bx^2 + c)^2}$$
+
+Będzie to wyglądać następująco:
+
+\begin{equation*}
+    \begin{aligned}
+        u_c(\rho_c) &= \sqrt{\displaystyle\sum_{i=1}^{n} \left( \frac{\partial f}{\partial x_i} \right)^2 u^2(x_i)} \\
+        &= \sqrt{ \left(\frac{\partial}{\partial d_{zew}} \frac{m_c}{\pi h} \frac{1}{\left(\frac{d_{zew}^2 - d_{wew}^2}{4}\right)}\right)^2 \cdot u^2(d_{zew})
+                + \left(\frac{\partial}{\partial d_{2ew}} \frac{m_c}{\pi h} \frac{1}{\left(\frac{d_{zew}^2 - d_{wew}^2}{4}\right)}\right)^2 \cdot u^2(d_{wew}) } \\
+        &= \sqrt{ \left(\frac{-2\frac{m_c}{\pi h}\frac{1}{4}d_{zew}}{\left(\frac{d_{zew}^2 - d_{wew}^2}{4}\right)^2}\right)^2 \cdot (0.03)^2
+                + \left(\frac{-2\frac{m_c}{\pi h}\frac{1}{4}d_{wew}}{\left(\frac{d_{zew}^2 - d_{wew}^2}{4}\right)^2}\right)^2 \cdot (0.03)^2 } \\
+        &= \sqrt{ \left(\frac{-\frac{5.5}{3.14 \cdot 22.83 \cdot 2} \cdot 15.98}{\left(\frac{(15.98)^2 - (11.91)^2}{4}\right)^2}\right)^2 \cdot 0.0009
+                + \left(\frac{-\frac{5.5}{3.14 \cdot 22.83 \cdot 2} \cdot 11.91}{\left(\frac{(15.98)^2 - (11.91)^2}{4}\right)^2}\right)^2 \cdot 0.0009 } 
+        \approx \sqrt{ (0.00076)^2 + (0.00057)^2 } = 0.00095
+    \end{aligned}
+\end{equation*} \\
+
+Gęstość będzię równa: \\
+
+$$\rho_c = \frac{5.5g}{2027mm^3} \approx (2.7 \pm 0.95) * 10^{-3} \frac{g}{mm^3}$$ \\
+
+{\subsection{Wałek}}
+
+Wzór na objętość wałka będzie nieco bardziej skomplikowany, a co za tym idzie, również funkcja gęstości. \\
+Objętość frezu, którą trzeba odjąć od całościowej objętości będzie równa różnicy wycinka koła i pola trójkąta stworzonego z promieni koła i szerokości frezu razy jego długość.
+
+$$ V_f = (P_w - P_{\Delta}) \cdot d_f = \left(\frac{\alpha}{2\pi}\pi \left(\frac{\phi_5}{2}\right)^2 - 2\cdot\frac{1}{2}\frac{s_f}{2}\sqrt{\left(\frac{\phi_5}{2}\right)^2 - \left(\frac{s_f}{2}\right)^2}\right) \cdot d_f \approx 80.56mm^3 $$
+
+Objętość całego wałka będzie równa:
+
+$$V_w = \pi \left(\frac{\phi_1}{2}\right)^2 d_1 + \pi \left(\frac{\phi_2}{2}\right)^2 d_2 + \pi \left(\frac{\phi_3}{2}\right)^2 d_3 + \pi \left(\frac{\phi_4}{2}\right)^2 d_4 + \pi \left(\frac{\phi_5}{2}\right)^2 d_5 - \pi \left(\frac{\phi_6}{2}\right)^2 d_6 - V_f \textrm{,}$$
+
+więc wzór na gęstość wałka jako funkcji wielu zmiennych będzie miał postać:
+
+$$\rho_w(\phi_1, d_1, ..., \phi_6, d_6) = \frac{m_w}{\pi \left(\frac{\phi_1}{2}\right)^2 d_1 + \pi \left(\frac{\phi_2}{2}\right)^2 d_2 + \pi \left(\frac{\phi_3}{2}\right)^2 d_3 + \pi \left(\frac{\phi_4}{2}\right)^2 d_4 + \pi \left(\frac{\phi_5}{2}\right)^2 d_5 - \pi \left(\frac{\phi_6}{2}\right)^2 d_6 - 80.56}$$
+
+Do niepewności złożonej wałka również posłużą wzóry zastosowane w przypadku cylindra.
+
+\begin{equation*}
+    \begin{aligned}
+        u_c(\rho_w) &= \sqrt{\displaystyle\sum_{i=1}^{n} \left( \frac{\partial f}{\partial x_i} \right)^2 u^2(x_i)} \\
+        &= \sqrt{ \left(\frac{\partial}{\partial \phi_1} \frac{m_w}{\pi \left(\frac{\phi_1}{2}\right)^2 d_1 + \pi \left(\frac{\phi_2}{2}\right)^2 d_2 + ... + \pi \left(\frac{\phi_5}{2}\right)^2 d_5 - \pi \left(\frac{\phi_6}{2}\right)^2 d_6 - 80.56} \right)^2 \cdot u^2(\phi_1) + ...} \\
+        &= \sqrt{ \left(\frac{2\frac{m_w}{2\pi}d_1 \phi_1}{\left(\left(\frac{\phi_1}{2}\right)^2 d_1 + \left(\frac{\phi_2}{2}\right)^2 d_2 + ... + \left(\frac{\phi_5}{2}\right)^2 d_5 - \left(\frac{\phi_6}{2}\right)^2 d_6 - 80.56 \right)^2 }\right)^2 \cdot u^2(\phi_1) + ... } \\
+        &\approx 0.000013
+    \end{aligned}
+\end{equation*} \\
+
+Gęstość będzie równa: \\
+
+$$\rho_w = \frac{51.57g}{16267mm^3} = (3.17 \pm 0.013) \cdot 10^-3 \frac{g}{mm^3}$$
