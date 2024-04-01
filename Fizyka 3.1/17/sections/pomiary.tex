@@ -1,0 +1,199 @@
+{\section{Wyniki i analiza pomiarów}}
+Podczas wykonywania pomiarów musimy uwzględnić błędy metody,
+tj. miara, którą wykonywaliśmy pomiar długości wahadła posiada błąd o wartości 1mm.
+Dla pomiaru czasu korzystaliśmy ze stopera, więc problemem jest czas reakcji osoby wykonującej pomiar.
+Przyjęliśmy, że niepewność eksperymentatora wyniesie 0.2s, a niepewność metody wynosi 0.01s.
+Przy pomiarach związanych z wahadłem fizycznym użyliśmy dodatkowo suwmiarki oraz wagi. Do pomiaru średnic pierścienia błąd suwmiarki wynosił 0.05mm, a do pomiaru masy błąd wagi wynosił 0.001kg. \\
+\indent Do obliczenia średnich oraz niepewności skorzystamy z poniższych wzorów: 
+
+\begin{equation*}
+    \begin{aligned}
+        \displaystyle \overline{x} = \frac{1}{n} \sum_{i=1}^{n} x_i                         \quad &{\textrm{- średnia arytmetyczna}} \\
+        u_A(x) = \sqrt{\frac{ \displaystyle \sum_{i=1}^{n}(x_i - \overline{x})^2 }{n(n-1)}} \quad &{\textrm{- niepewność standardowa typu A}} \\
+        u_B(x) = \sqrt{ \frac{(\Delta_p x)^2}{3} + \frac{(\Delta_e x)^2}{3} }               \quad &{\textrm{- niepewność standardowa typu B}} \\
+        u(x) = \sqrt{ (u_A(x))^2 + (u_B(x))^2 }                                             \quad &{\textrm{- niepewność standardowa całkowita}} \\
+        u_c(y) = \sqrt{\displaystyle\sum_{i=1}^{n} \left( \frac{\partial f}{\partial x_i} \right)^2 u^2(x_i)} \quad &{\textrm{- niepewność złożona}}
+    \end{aligned}
+\end{equation*}
+
+Niepewność typu B dla pomiaru z użyciem miary: $\displaystyle u_B(x) = \sqrt{ \frac{(1)^2}{3} } \approx 0.0058m$ \\
+
+Niepewność typu B dla pomiaru z użyciem stopera: $\displaystyle u_B(x) = \sqrt{ \frac{(0.01)^2}{3} + \frac{(0.2)^2}{3} } \approx 0.12s$ \\
+
+Niepewność typu B dla pomiaru z użyciem suwmiarki: $\displaystyle u_B(x) = \sqrt{ \frac{(0.00005)^2}{3} } \approx 0.000029m$ \\
+
+Niepewność typu B dla pomiaru z użyciem wagi: $\displaystyle u_B(x) = \sqrt{ \frac{(0.001)^2}{3} } \approx 0.00058kg$ \\
+
+{\subsection{Wahadło matematyczne}}
+
+Dla wahadła matematycznego przeprowadziliśmy pomiary trzech długości wahadła dla których wykonaliśmy po 3 pomiary czasu oscylacji (łącznie 9 pomiarów),
+gdzie ilość wahnięć wahadła była równa $n = 100$.
+Wyniki pomiarów dla trzech długości wahadła przedstawione są w tabeli poniżej: \\
+
+\begin{center}
+    \begin{tabular}[h]{|c|c|c||c|c||c|c|}
+        \hline
+        Lp. & Długość $l_1$             & Czas $t_1$             & $l_2$                  & $t_2$   & $l_3$                   & $t_3$ \\
+        \hline
+        1 & \multirow{3}{*}{0.63m}      & 159.13s                & \multirow{3}{*}{0.33m} & 114.79s & \multirow{3}{*}{0.185m} & 85.8s \\
+        2 &                             & 158.45s                &                        & 114.24s &                         & 85.75s \\
+        3 &                             & 158.56s                &                        & 114.32s &                         & 86s \\ 
+        \hline
+    \end{tabular}
+\end{center}
+
+Dla pojedynczych pomiarów długości niepewność standardowa całkowita będzie równa: $u(x) = u_B(x) = 0.00577m$. \\
+Dla pomiarów czasu potrzebujemy dodatkowo uwzględnić odchylenie standardowe (niepewność typu A). \\
+\indent Przykład dla $t_1$:
+$$
+u_A(t_1) = \sqrt{\frac{ \displaystyle \sum_{i=1}^{n}(x_i - \overline{x})^2 }{n(n-1)}}
+= \sqrt{\frac{(159.13 - 158.71)^2 + (158.45 - 158.71)^2 + (158.56 - 158.71)^2}{6}} \approx 0.21s
+$$
+Po obliczeniu średnich wartości wielkości mierzonych i ich niepewności pomiarowych wyszły poniższe wyniki:
+
+\begin{center}
+    \begin{tabular}[h]{|c|c|c|c||c|c|c|}
+        \hline
+                       & $l_1$ & $l_2$ & $l_3$         & $t_1$    & $t_2$   & $t_3$ \\
+        \hline
+        $\overline{x}$ & 0.63m & 0.33m & 0.185m        & 158.71s  & 114.45s & 85.85s \\
+        \hline
+        $u_A(x)$       &  \multicolumn{3}{|c||}{\cellcolor{black!10}}       & 0.21s & 0.17s & 0.076s \\
+        \hline
+        $u_B(x)$       & \multicolumn{3}{c||}{0.0058m} & \multicolumn{3}{c|}{0.12s} \\
+        \hline
+        $u(x)$         & \multicolumn{3}{c||}{0.0058m} & 0.24s & 0.21s & 0.14s \\
+        \hline
+    \end{tabular}
+\end{center}
+Obliczamy teraz okres drgań dla każdej długości ze wzoru $T = \frac{t}{n}$, średnią, oraz niepewność złożoną.
+
+\indent Przykład dla $T_1$:
+$$ T_1 = T(t_1) = \frac{t_1}{n} = \frac{159.13s}{100} \approx 1.59s $$
+$$
+u_c(T(t_1)) = \sqrt{ \left( \frac{\partial T(t_1)}{\partial t_1} \right)^2 u^2(t_1)}
+= \sqrt{ \left( \frac{1}{100} \right)^2 \cdot (0.24)^2}
+= \sqrt{\frac{0.0576}{10000}} \approx 0.0024s
+$$
+
+\begin{center}
+    \begin{tabular}[h]{|c|c|c|}
+        \hline
+        {}             & $T_i$ & $u(T_i)$ \\
+        \hline
+        1              & 1.59s & 0.0024s \\
+        2              & 1.14s & 0.0021s \\
+        3              & 0.86s & 0.0014s \\
+        \hline
+        $\overline{x}$ & 1.20s & \cellcolor{black!10} \\
+        \hline
+    \end{tabular}
+\end{center}
+
+W tym momencie mamy już wszystko do obliczenia przyspieszenia ziemskiego ze wzoru $\displaystyle g = 4\pi^2 \frac{l}{T^2}$, oraz niepewności złożonej.
+
+\indent Przykład dla $g_1$:
+
+$$ g_1 = g(l_1, T_1) = 4\pi^2 \frac{l_1}{T_1^2} = 4\pi \frac{0.63m}{(1.59s)2} \approx 9.87 \frac{m}{s^2} $$
+
+\begin{equation*}
+    \begin{aligned}
+        u_c(g(l_1, T_1)) &= \sqrt{ \left( \frac{\partial g(l_1, T_1)}{\partial l_1} \right)^2 u^2(l_1) +  \left( \frac{\partial g(l_1, T_1)}{\partial T_1} \right)^2 u^2(T_1)} \\
+        &= \sqrt{ \left( \frac{4\pi^2}{(1.59s)^2} \right) \cdot (0.0058m)^2 + \left( \frac{-2 \cdot 4\pi^2 \cdot 0.63m}{(1.59)^3} \right) \cdot (0.0024)^2 } \approx 0.095 \frac{m}{s^2}
+    \end{aligned}
+\end{equation*}
+
+\begin{center}
+    \begin{tabular}[h]{|c|c|c|}
+        \hline
+        {}             & $g_i$ & $u_c(g_i)$ \\
+        \hline
+        1              & $9.87 \frac{m}{s^2}$ & $0.096 \frac{m}{s^2}$ \\
+        2              & $9.95 \frac{m}{s^2}$ & $0.18  \frac{m}{s^2}$ \\
+        3              & $9.91 \frac{m}{s^2}$ & $0.31  \frac{m}{s^2} $ \\
+        \hline
+        $\overline{x}$ & $9.91 \frac{m}{s^2}$ & \cellcolor{black!10} \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Końcowo otrzymujemy wyniki z uwzględnieniem niepewności złożonej równy:
+$$ g = (9.91 \pm 0.12) \frac{m}{s^2}$$
+
+{\subsection{Wahadło fizyczne}}
+
+Dla wahadła fizycznego przeprowadziliśmy pomiary średnicy wewnętrznej (d) i zewnętrznej pierścienia (D) i jego masy (m), następnie dokonaliśmy trzech pomiarów czasu oscylacji, gdzie ilość wahnięć wahadła była równa $n = 100$.
+Wyniki pomiarów przedstawione są w tabeli poniżej: \\
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Lp. & m       & D       & d       & t \\
+        \hline
+        1 &  \multirow{4}{*}{0.2148kg}  & \multirow{4}{*}{0.1195m} & \multirow{4}{*}{0.1045m} & 67.57s \\
+        2 &                           &                          &                          &  66.64 \\
+        3 &                           &                          &                          &  65.96 \\
+        $\overline{x}$ &              &                          &                          & 66.57  \\
+        \hline
+        $u_A(x)$  & \multicolumn{3}{|c|}{\cellcolor{black!10}}                                                  & 0.34 \\
+        \hline
+        $u_B(x)$  & \multirow{2}{*}{0.00057g} & \multirow{2}{*}{0.00003m}  & \multirow{2}{*}{0.00003m} & 0.12s \\
+        $u(x)$    &            &                   &                  &
+        0.36s \\
+        \hline
+        
+    \end{tabular}
+\end{center}
+
+Do wyznaczenia przyśpieszenia grawitacyjnego potrzebujemy jeszcze obliczyć momenty bezwładności: 
+
+$$I_0 = \frac{1}{8} m(d^2 + D^2) = \frac{1}{8} 0.2148kg((0.1045m)^2 + (0.1195m)^2) \approx 0.00067663 kgm^2$$
+
+$$I = I_0 + m \frac{d^2}{4} = 0.00067663 + 0.2148kg \frac{(0.1045)^2}{4} \approx 0.0012630kgm^2	$$
+
+Niepewność złożona będzie liczona w następujący sposób:
+
+$$I = I(m, d, D) = I_0 + m \frac{d^2}{4} = \frac{1}{8} m(d^2 + D^2) + m \frac{d^2}{4}$$
+
+\begin{equation*}
+    \begin{aligned}
+        u_c^2(I(m, d, D)) &= \left( \frac{\partial I(m, d, D)}{\partial m} \right)^2 u^2(m)
+        + \left( \frac{\partial I(m, d, D)}{\partial d} \right)^2 u^2(d)
+        + \left( \frac{\partial I(m, d, D)}{\partial D} \right)^2 u^2(D) \\
+        &= \left( \frac{d^2 + D^2}{8} + \frac{d^2}{4} \right)^2 u^2(m)
+        +  \left( \frac{dm}{4} + \frac{dm}{2} \right)^2 u^2(d)
+        +  \left( \frac{Dm}{4} \right)^2 u^2(D) \\
+        &= \left( \frac{(0.1045m)^2 + (0.1195m)^2}{8} + \frac{(0.1045m)^2}{4} \right)^2 (0.00057kg)^2 \\
+        &\quad+ \left( \frac{0.1045m \cdot 0.2148kg}{4} + \frac{0.1045m \cdot 0.2148kg}{2} \right)^2 (0.00003m)^2 \\
+        &\quad+ \left( \frac{0.1195m \cdot 0.2148kg}{4} \right)^2 (0.00003m)^2 \approx 1.1526 \cdot 10^{-11}
+    \end{aligned}
+\end{equation*}\\
+
+$$u_c(I(m, d, D)) = \sqrt{u_c^2(I(m, d, D))} = \sqrt{ 1.1526 \cdot 10^{-11} } \approx 0.0000034$$
+
+Mając obliczony moment bezwładności i jego niepewność możemy wyzaczyć przyspieszenie grawitacyjene ze wzoru $\displaystyle g = 8\pi^2 \frac{I}{T^2 md}$, oraz jego niepewność złożoną.\\
+
+$$g = 8\pi^2 \frac{I}{T^2 md} = 8\pi^2 \frac{0.00126}{(0.666)^2 \cdot 0.2148 \cdot 0.1045} \approx 9.992 \frac{m}{s^2}$$
+
+\begin{equation*}
+    \begin{aligned}
+        u_c^2(g(I, T, m, d)) &= \left( \frac{\partial g(I, T, m, d)}{\partial I} \right)^2 u(I)^2
+        + \left( \frac{\partial g(I, T, m, d)}{\partial T} \right)^2 u(T)^2
+        + \left( \frac{\partial g(I, T, m, d)}{\partial m} \right)^2 u(m)^2
+        + \left( \frac{\partial g(I, T, m, d)}{\partial d} \right)^2 u(d)^2 \\
+        &= \left( \frac{8\pi^2}{T^2md} \right)^2 u(I)^2 
+        + \left( -\frac{8\pi^2I}{md} \frac{1}{T^3} \right)^2 u(T)^2
+        + \left( -\frac{8\pi^2I}{T^2d} \frac{1}{m^2} \right)^2 u(m)^2
+        + \left( -\frac{8\pi^2I}{T^2m} \frac{1}{d^2} \right)^2 u(d)^2 \\
+        &= \left( \frac{8\pi^2}{(0.666s)^2 \cdot 0.2148 \cdot 0.1045} \right)^2 (0.0000034)^2 \\
+        &\quad+ \left( -\frac{8\pi^2 \cdot 0.00126}{0.2148 \cdot 0.1048} \frac{1}{(0.666)^3} \right)^2 (0.0011))^2 \\
+        &\quad+ \left( \frac{8\pi^2 \cdot 0.00126}{(0.666)^2 \cdot 0.1045} \frac{1}{(0.2148)^2} \right)^2 (0.00003)^2 \\
+        &\quad+ \left( -\frac{8\pi^2 \cdot 0.00126}{(0.666)^2 \cdot 0.2148} \frac{1}{(0.1045)^2} \right)^2 (0.0003)^2 \approx 0.001 \frac{m}{s^2}
+    \end{aligned}
+\end{equation*}
+
+$$u_c(g(I, T, m, d)) = \sqrt{u_c^2(g(I, T, m, d))} \approx 0.032 \frac{m}{s^2}$$
+
+Końcowy wynik przyspieszenia ziemskiego stosując wahadło fizyczne, to:
+
+$$g = (9.992 \pm 0.032) \frac{m}{s^2}$$
