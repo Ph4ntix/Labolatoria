@@ -1,5 +1,5 @@
 # Sprawozdania labolatoryjne
-Autorzy: Kacper Kowalik | Adam Matysiak
+Autorzy: Adam Matysiak, Kacper Kowalik
 
 ## Fizyka 3.1
 
