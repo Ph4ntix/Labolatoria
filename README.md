@@ -12,3 +12,11 @@
 ## Metrologia elektroniczna
 
 *Comming soon...*
+
+## Pakunki
+### Schematy i grafika
+- GraphicX `\usepackage{graphicx}`
+- TikZ `\usepackage{tikz}`
+- [CircuiTikZ](https://texdoc.org/serve/circuitikzmanual.pdf/0)  `\usepackage{circuitikz}`
+
+
