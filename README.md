@@ -11,7 +11,7 @@
 
 ## Metrologia elektroniczna
 
-*Comming soon...*
+### [Ćwiczenie 3](https://github.com/Ph4ntix/Labolatoria/blob/main/Metrologia%20elektroniczna/%C4%86wiczenie%203/metrologia_elektroniczna_lab_3.pdf) - Pomiary rezystancji i impedancji
 
 ## Pakunki
 ### Schematy i grafika
