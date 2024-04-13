@@ -1,1 +1,33 @@
+\documentclass[10pt, a4paper]{article}
 
+\usepackage{dingbat}          % \checkmark
+\usepackage[table]{xcolor}
+
+\usepackage{amsmath}          % Zaawansowana obróbka wzorów matematycznych
+\usepackage{graphicx}         % Kolorowanie tekstu
+\usepackage{multicol}         % ?
+\usepackage{multirow}
+%\usepackage[makeroom]{cancel} % ?
+\usepackage{polski}           % Polskie znaki
+\usepackage[utf8]{inputenc}   % Kodowanie UTF8
+\usepackage{geometry}         % Ustawienia układu strony dokumentu
+ \geometry{
+ a4paper,
+ % width  = totalx - left
+ % height = totaly - top
+ total={180mm,267mm},
+ left=15mm,
+ top=15mm,
+ }
+
+\begin{document}
+
+\input{sections/header}
+
+\input{sections/wstep}
+
+\input{sections/pomiary}
+
+\input{sections/wnioski}
+
+\end{document}
