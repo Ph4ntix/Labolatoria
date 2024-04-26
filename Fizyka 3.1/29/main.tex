@@ -1,0 +1,38 @@
+\documentclass[10pt]{article}
+
+\usepackage{dingbat}          % \checkmark
+\usepackage[table]{xcolor}    % Kolorowanie komórek w tabelkach
+\usepackage{circuitikz}       % Schematy elektryczne
+
+\usepackage{hyperref}         % Interaktyne linki
+
+\usepackage{amsmath}          % Zaawansowana obróbka wzorów matematycznych
+\usepackage{graphicx}         % Kolorowanie tekstu
+\usepackage{multicol}         % Podział strony na kilka kolumn
+\usepackage{multirow}         % Scalanie komórek w tabelkach
+\usepackage{polski}           % Polskie znaki
+\usepackage[utf8]{inputenc}   % Kodowanie UTF8
+\usepackage{geometry}         % Ustawienia układu strony dokumentu
+\geometry{
+    a4paper,
+    % width  = totalx - left
+    % height = totaly - top
+    total={180mm,267mm},
+    left=15mm,
+    top=15mm
+}
+
+\input{decalre}
+
+\begin{document}
+\tikzset{european}
+
+\input{sections/header}
+
+\input{sections/wstep}
+
+\input{sections/pomiary}
+
+\input{sections/wnioski}
+
+\end{document}
